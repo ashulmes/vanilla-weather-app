@@ -1,0 +1,152 @@
+/* GENERAL STYLES */
+
+h1 {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.5;
+  padding-top: 15px;
+  text-transform: none;
+}
+
+p {
+  letter-spacing: 1px;
+  margin-top: -20px;
+}
+
+footer {
+  color: rgb(15, 15, 15);
+  font-family: "Varta", sans-serif;
+  font-size: 10px;
+  margin-top: -10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a {
+  color: rgb(15, 15, 15);
+  transition: all 200ms ease-in-out;
+}
+
+a:hover {
+  color: rgb(108, 117, 125);
+  cursor: pointer;
+}
+
+div.app-contents {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  color: rgb(15, 15, 15);
+  display: block;
+  font-family: "Varta", sans-serif;
+  font-size: 12px;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* SEARCH FUNCTIONALITY */
+
+header.search-form {
+  margin: 12px;
+}
+
+div.search-field {
+  padding-right: 5px;
+}
+
+.form-control {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.form-control:focus {
+  border-color: #6c757d;
+  box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25);
+}
+
+button.btn-secondary {
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 5px 9px;
+}
+
+div.search-button {
+  padding: 0px 2px;
+}
+
+div.locate-button {
+  padding: 0px 12px 0px 1px;
+}
+
+/* CURRENT WEATHER */
+
+i.current-weather-icon {
+  font-size: 50px;
+  padding: 3px;
+  position: relative;
+  bottom: 4px;
+}
+
+span.temperature-value {
+  font-size: 70px;
+  font-weight: 900;
+}
+
+a.temperature-metric {
+  color: rgb(15, 15, 15);
+  font-size: 16px;
+  position: relative;
+  bottom: 34px;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+a.temperature-metric:hover {
+  color: rgb(108, 117, 125);
+  cursor: pointer;
+}
+
+section.weather-info {
+  letter-spacing: 1px;
+  padding-top: 18px;
+  padding-bottom: 22px;
+}
+
+section .headings {
+  font-weight: 900;
+}
+
+/* WEATHER FORECAST */
+
+section.forecast-tabs {
+  padding: 15px;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.nav-pills .nav-link.active {
+  background: #6c757d;
+  color: #ffffff;
+}
+
+.nav-pills .nav-link {
+  color: #000000;
+  transition: all 200ms ease-in-out;
+}
+
+.nav-link:hover {
+  color: rgb(108, 117, 125);
+}
+
+div.forecast {
+  padding-top: 20px;
+}
+
+.forecast-icons {
+  line-height: 20px;
+}
