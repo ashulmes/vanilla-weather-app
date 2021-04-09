@@ -4,18 +4,166 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varta&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ff05acaa70.js"
+      crossorigin="anonymous"
+    ></script>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script
   </head>
+
   <body>
     <div class="container">
-      <h1>Hello, Alex!</h1>
+      <div class="app-contents">
+        <header class="search-form">
+          <form id="city-search-form">
+            <div class="row">
+              <div class="col-10 search-field">
+                <input
+                  type="text"
+                  class="form-control"
+                  autocomplete="off"
+                  autofocus
+                  placeholder="Enter a city..."
+                  id="search-text-input"
+                />
+              </div>
+              <div class="col-1 search-button">
+                <button type="submit" class="btn btn-secondary">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <div class="col-1 locate-button" id="locate-button">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fas fa-location-arrow"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </header>
+
+        <h1 id="city-name">---</h1>
+        <p id="date-and-time"></p>
+
+        <i class="fas fa-cloud-sun current-weather-icon"></i>
+        <span class="temperature-value" id="temperature-value">-</span>
+        <a href="#" class="temperature-metric" id="celsius-link"
+          ><strong>°C</strong> </a
+        ><a href="#" class="temperature-metric" id="fahrenheit-link">| °F</a>
+        <p id="weather-description"></p>
+
+        <section class="weather-info">
+          <div class="row justify-content-center headings">
+            <div class="col-3">Feels Like</div>
+            <div class="col-3">Wind</div>
+            <div class="col-3">Humidity</div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-3" id="feels-like">-°C</div>
+            <div class="col-3" id="wind">- MPH</div>
+            <div class="col-3" id="humidity">-%</div>
+          </div>
+        </section>
+
+        <section class="forecast-tabs">
+          <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link active"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-today"
+                type="button"
+                role="tab"
+              >
+                Today
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-week"
+                type="button"
+                role="tab"
+              >
+                This Week
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active forecast"
+              id="pills-today"
+              role="tabpanel"
+            >
+              <div class="row">
+                <div class="col">15:00</div>
+                <div class="col">16:00</div>
+                <div class="col">17:00</div>
+                <div class="col">18:00</div>
+                <div class="col">19:00</div>
+              </div>
+              <div class="row forecast-icons">
+                <div class="col"><i class="fas fa-cloud"></i></div>
+                <div class="col"><i class="fas fa-cloud"></i></div>
+                <div class="col"><i class="fas fa-cloud-sun"></i></div>
+                <div class="col"><i class="fas fa-cloud-sun"></i></div>
+                <div class="col"><i class="fas fa-cloud-sun"></i></div>
+              </div>
+              <div class="row">
+                <div class="col">8°C</div>
+                <div class="col">8°C</div>
+                <div class="col">7°C</div>
+                <div class="col">6°C</div>
+                <div class="col">5°C</div>
+              </div>
+            </div>
+            <div class="tab-pane fade forecast" id="pills-week" role="tabpanel">
+              <div class="row">
+                <div class="col">Mon</div>
+                <div class="col">Tue</div>
+                <div class="col">Wed</div>
+                <div class="col">Thu</div>
+                <div class="col">Fri</div>
+              </div>
+              <div class="row forecast-icons">
+                <div class="col"><i class="fas fa-cloud-rain"></i></div>
+                <div class="col"><i class="fas fa-cloud"></i></div>
+                <div class="col">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="col">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="col"><i class="fas fa-cloud-rain"></i></div>
+              </div>
+              <div class="row">
+                <div class="col">8°C</div>
+                <div class="col">10°C</div>
+                <div class="col">10°C</div>
+                <div class="col">8°C</div>
+                <div class="col">7°C</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        This app was coded by Alex Sumner-Hulmes and is <a href="https://github.com/ashulmes/shecodes-weather-app" target="_blank">open-sourced on GitHub</a> and <a href="https://www.netlify.com/" target="_blank">hosted on Netlify</a>.
+        </footer>
     </div>
     <script src="src/app.js"></script>
   </body>
