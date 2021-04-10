@@ -55,6 +55,8 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celciusTemperature = response.data.main.temp;
 }
 
 let iconElement = document.querySelector("#weather-icon");
@@ -110,29 +112,31 @@ function defaultSearch(searchInput) {
 
 // CELCIUS AND FAHRENHEIT //
 
-/*
-
-let temperature = document.querySelector("#temperature-value");
 let fahrenheit = document.querySelector("#fahrenheit-link");
 let celsius = document.querySelector("#celsius-link");
 
 function changeToFahrenheit(event) {
   event.preventDefault();
-  temperature.innerHTML = 48;
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  document.querySelector("#temperature-value").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
   fahrenheit.innerHTML = `| <strong>°F</strong>`;
   celsius.innerHTML = `°C `;
 }
 
 function changeToCelsius(event) {
   event.preventDefault();
-  temperature.innerHTML = 9;
+  document.querySelector("#temperature-value").innerHTML = Math.round(
+    celciusTemperature
+  );
   fahrenheit.innerHTML = `| °F`;
   celsius.innerHTML = `<strong>°C</strong> `;
 }
 
+let celciusTemperature = null;
+
 fahrenheit.addEventListener("click", changeToFahrenheit);
 celsius.addEventListener("click", changeToCelsius);
-
-*/
 
 defaultSearch("Manchester");
