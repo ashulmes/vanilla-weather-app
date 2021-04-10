@@ -33,7 +33,7 @@ a:hover {
 }
 
 div.app-contents {
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-image: linear-gradient(to bottom right, #aebcdb 0%, #e4efe9 100%);
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   color: rgb(15, 15, 15);
@@ -83,13 +83,6 @@ div.locate-button {
 
 /* CURRENT WEATHER */
 
-i.current-weather-icon {
-  font-size: 50px;
-  padding: 3px;
-  position: relative;
-  bottom: 4px;
-}
-
 span.temperature-value {
   font-size: 70px;
   font-weight: 900;
@@ -117,6 +110,18 @@ section.weather-info {
 
 section .headings {
   font-weight: 900;
+}
+
+#weather-icon {
+  width: 100px;
+  position: relative;
+  bottom: 20px;
+  left: 5px;
+}
+
+#weather-description {
+  margin-top: -30px;
+  padding-bottom: 5px;
 }
 
 /* WEATHER FORECAST */
