@@ -31,7 +31,7 @@ let months = [
 let month = months[now.getMonth()];
 
 let timeAndDate = document.querySelector("#date-and-time");
-timeAndDate.innerHTML = `${date} ${month}, ${hour}:${minutes}`;
+timeAndDate.innerHTML = `Updated: ${date} ${month}, ${hour}:${minutes}`;
 
 // DISPLAY WEATHER //
 
