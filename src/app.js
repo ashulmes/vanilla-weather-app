@@ -35,6 +35,27 @@ timeAndDate.innerHTML = `Updated: ${date} ${month}, ${hour}:${minutes}`;
 
 // DISPLAY WEATHER //
 
+function displayForecast() {
+  let dailyForecastElement = document.querySelector("#daily-forecast");
+
+  let dailyForecastHTML = `
+   <div class="row forecast-daily">`;
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    dailyForecastHTML =
+      dailyForecastHTML +
+      `<div class="col">
+		<div class="forecast-day">${day}</div>
+		<img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" />
+		<div class="weather-forecast-temps">8°C</div>
+</div>
+   `;
+  });
+
+  dailyForecastHTML = dailyForecastHTML + `</div>`;
+  dailyForecastElement.innerHTML = dailyForecastHTML;
+}
+
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#temperature-value").innerHTML = Math.round(
@@ -140,3 +161,4 @@ fahrenheit.addEventListener("click", changeToFahrenheit);
 celsius.addEventListener("click", changeToCelsius);
 
 defaultSearch("Manchester");
+displayForecast();
