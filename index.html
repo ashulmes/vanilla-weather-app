@@ -27,6 +27,8 @@
   <body>
     <div class="container">
       <div class="app-contents">
+
+
         <header class="search-form">
           <form id="city-search-form">
             <div class="row">
@@ -54,15 +56,16 @@
           </form>
         </header>
 
+
         <h1 id="city-name">---</h1>
         <p id="date-and-time"></p>
-
         <img src="http://openweathermap.org/img/wn/03d@2x.png" id="weather-icon" />
         <span class="temperature-value" id="temperature-value">-</span>
         <a href="#" class="temperature-metric" id="celsius-link"
           ><strong>°C</strong> </a
         ><a href="#" class="temperature-metric" id="fahrenheit-link">| °F</a>
         <p id="weather-description"></p>
+
 
         <section class="weather-info">
           <div class="row justify-content-center headings">
@@ -78,50 +81,30 @@
           </div>
         </section>
 
+
         <section class="forecast-tabs">
-          <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link active"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-today"
-                type="button"
-                role="tab"
-              >
-                Today
-              </a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-week"
-                type="button"
-                role="tab"
-              >
-                This Week
-              </a>
-            </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div
-              class="tab-pane fade show active forecast"
-              id="pills-today"
-              role="tabpanel"
-            >
-              <div class="row">
+         <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-today-tab" data-bs-toggle="pill" data-bs-target="#pills-today" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Today</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-week-tab" data-bs-toggle="pill" data-bs-target="#pills-week" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">This Week</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-today-tab"><div class="row forecast-upcoming">
                 <div class="col">15:00</div>
                 <div class="col">16:00</div>
                 <div class="col">17:00</div>
                 <div class="col">18:00</div>
                 <div class="col">19:00</div>
               </div>
-              <div class="row forecast-icons">
-                <div class="col"><i class="fas fa-cloud"></i></div>
-                <div class="col"><i class="fas fa-cloud"></i></div>
-                <div class="col"><i class="fas fa-cloud-sun"></i></div>
-                <div class="col"><i class="fas fa-cloud-sun"></i></div>
-                <div class="col"><i class="fas fa-cloud-sun"></i></div>
+              <div class="row forecast-icons-row">
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
               </div>
               <div class="row">
                 <div class="col">8°C</div>
@@ -129,26 +112,20 @@
                 <div class="col">7°C</div>
                 <div class="col">6°C</div>
                 <div class="col">5°C</div>
-              </div>
-            </div>
-            <div class="tab-pane fade forecast" id="pills-week" role="tabpanel">
-              <div class="row">
+              </div></div>
+  <div class="tab-pane fade" id="pills-week" role="tabpanel" aria-labelledby="pills-profile-tab"><div class="row forecast-upcoming">
                 <div class="col">Mon</div>
                 <div class="col">Tue</div>
                 <div class="col">Wed</div>
                 <div class="col">Thu</div>
                 <div class="col">Fri</div>
               </div>
-              <div class="row forecast-icons">
-                <div class="col"><i class="fas fa-cloud-rain"></i></div>
-                <div class="col"><i class="fas fa-cloud"></i></div>
-                <div class="col">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-                <div class="col">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-                <div class="col"><i class="fas fa-cloud-rain"></i></div>
+              <div class="row forecast-icons-row">
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
+                <div class="col"><img src="http://openweathermap.org/img/wn/04d@2x.png" class="forecast-icons" /></div>
               </div>
               <div class="row">
                 <div class="col">8°C</div>
@@ -156,15 +133,16 @@
                 <div class="col">10°C</div>
                 <div class="col">8°C</div>
                 <div class="col">7°C</div>
-              </div>
-            </div>
-          </div>
+              </div></div>
         </section>
+
       </div>
+
       <footer>
         This app was coded by Alex Sumner-Hulmes. It is <a href="https://github.com/ashulmes/vanilla-weather-app" target="_blank">open-sourced on GitHub</a> and <a href="https://www.netlify.com/" target="_blank">hosted on Netlify</a>.
         </footer>
     </div>
     <script src="src/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
   </body>
 </html>

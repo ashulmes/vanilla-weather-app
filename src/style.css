@@ -139,19 +139,40 @@ section.forecast-tabs {
   color: #ffffff;
 }
 
+.nav-link {
+  width: 225px;
+  text-align: center;
+}
+
 .nav-pills .nav-link {
   color: #000000;
   transition: all 200ms ease-in-out;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .nav-link:hover {
   color: rgb(108, 117, 125);
 }
 
+.tab-content {
+  margin-top: 20px;
+}
+
 div.forecast {
   padding-top: 20px;
 }
 
-.forecast-icons {
+.forecast-upcoming {
+  font-weight: 600;
+}
+
+.forecast-icons-row {
   line-height: 20px;
+}
+
+.forecast-icons {
+  height: 35px;
+  position: relative;
+  bottom: 2px;
 }
