@@ -56,6 +56,13 @@ function displayForecast() {
   dailyForecastElement.innerHTML = dailyForecastHTML;
 }
 
+function getForecast(coordinates) {
+  let unit = "metric";
+  let apiKey = "4a150b550611ee8a27e04e337620852b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#temperature-value").innerHTML = Math.round(
@@ -78,6 +85,8 @@ function displayWeather(response) {
   );
 
   celciusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 let iconElement = document.querySelector("#weather-icon");
@@ -161,4 +170,3 @@ fahrenheit.addEventListener("click", changeToFahrenheit);
 celsius.addEventListener("click", changeToCelsius);
 
 defaultSearch("Manchester");
-displayForecast();
