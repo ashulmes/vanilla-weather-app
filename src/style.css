@@ -17,7 +17,7 @@ footer {
   color: rgb(15, 15, 15);
   font-family: "Varta", sans-serif;
   font-size: 10px;
-  margin-top: -15px;
+  margin-top: -25px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -33,7 +33,7 @@ a:hover {
 }
 
 div.app-contents {
-  background-image: linear-gradient(to bottom right, #aebcdb 0%, #e4efe9 100%);
+  background-image: linear-gradient(to top, #aebcdb 0%, #e4efe9 100%);
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   color: rgb(15, 15, 15);
