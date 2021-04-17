@@ -156,33 +156,4 @@ function defaultSearch(searchInput) {
   axios.get(apiDefaultUrl).then(displayWeather);
 }
 
-// CELCIUS AND FAHRENHEIT //
-
-let fahrenheit = document.querySelector("#fahrenheit-link");
-let celsius = document.querySelector("#celsius-link");
-
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  document.querySelector("#temperature-value").innerHTML = Math.round(
-    fahrenheitTemperature
-  );
-  fahrenheit.innerHTML = `| <strong>°F</strong>`;
-  celsius.innerHTML = `°C `;
-}
-
-function changeToCelsius(event) {
-  event.preventDefault();
-  document.querySelector("#temperature-value").innerHTML = Math.round(
-    celciusTemperature
-  );
-  fahrenheit.innerHTML = `| °F`;
-  celsius.innerHTML = `<strong>°C</strong> `;
-}
-
-let celciusTemperature = null;
-
-fahrenheit.addEventListener("click", changeToFahrenheit);
-celsius.addEventListener("click", changeToCelsius);
-
 defaultSearch("Manchester");

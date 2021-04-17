@@ -88,18 +88,12 @@ span.temperature-value {
   font-weight: 900;
 }
 
-a.temperature-metric {
+.temperature-metric {
   color: rgb(15, 15, 15);
   font-size: 16px;
   position: relative;
-  bottom: 34px;
+  bottom: 35px;
   text-decoration: none;
-  transition: all 200ms ease-in-out;
-}
-
-a.temperature-metric:hover {
-  color: rgb(108, 117, 125);
-  cursor: pointer;
 }
 
 section.weather-info {
