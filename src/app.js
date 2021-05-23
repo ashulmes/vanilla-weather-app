@@ -72,7 +72,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let unit = "metric";
-  let apiKey = "4a150b550611ee8a27e04e337620852b";
+  let apiKey = "19d385dc0dd1bf5546034b3a8b29d4b0";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -114,7 +114,7 @@ function search(event) {
   let searchInput = document.querySelector("#search-text-input");
   let city = document.querySelector("#city-name");
   let unit = "metric";
-  let apiKey = "4a150b550611ee8a27e04e337620852b";
+  let apiKey = "19d385dc0dd1bf5546034b3a8b29d4b0";
   let apiSearchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${unit}`;
 
   if (searchInput.value === 0) {
@@ -131,7 +131,7 @@ searchForm.addEventListener("submit", search);
 
 function handlePosition(position) {
   let unit = "metric";
-  let apiKey = "4a150b550611ee8a27e04e337620852b";
+  let apiKey = "19d385dc0dd1bf5546034b3a8b29d4b0";
   let apiLocationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiLocationUrl).then(displayWeather);
@@ -149,7 +149,7 @@ locateButton.addEventListener("click", getCurrentPosition);
 function defaultSearch(searchInput) {
   let unit = "metric";
   let defaultCity = "Manchester";
-  let apiKey = "4a150b550611ee8a27e04e337620852b";
+  let apiKey = "19d385dc0dd1bf5546034b3a8b29d4b0";
   let apiDefaultUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=${unit}`;
   document.querySelector("#city-name").innerHTML = `${defaultCity}`;
 
